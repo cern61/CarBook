@@ -3,7 +3,6 @@
 # 🚘 CarBook
 </div>
 
----
 
 <p align="center">
   <strong>A modern car rental platform built with ASP.NET Core</strong><br>
@@ -22,8 +21,9 @@
 CarBook is a full-stack car rental application composed of an ASP.NET Core MVC web interface and a separate REST API. Visitors can discover cars and rental pricing, while administrators can manage the content and data that power the platform.
 
 The codebase is organized into application, persistence, API, and frontend projects. It uses Entity Framework Core for data access and applies CQRS, Mediator, and Repository patterns in the application layer.
-
+<p align="center">
 <img src="carbook.png" alt="CarBook" width="500">
+</p>
 
 ## 🎓 Certificate Program
 
@@ -43,15 +43,24 @@ This project was developed as part of the certificate program shown below.
 - 🔌 **REST API** — HTTP endpoints for cars, brands, reservations, blogs, and more.
 - 📖 **API documentation** — Swagger UI is enabled in the Development environment.
 
-## 🛠️ Technology
+## 🛠️ Tech Stack
 
-| Area | Technologies |
+<p align="center">
+  <img src="https://img.shields.io/badge/C%23-512BD4?logo=csharp&logoColor=white" alt="C#">
+  <img src="https://img.shields.io/badge/.NET%208-512BD4?logo=dotnet&logoColor=white" alt=".NET 8">
+  <img src="https://img.shields.io/badge/ASP.NET%20Core-512BD4?logo=dotnet&logoColor=white" alt="ASP.NET Core">
+  <img src="https://img.shields.io/badge/Entity%20Framework%20Core-512BD4?logo=dotnet&logoColor=white" alt="Entity Framework Core">
+  <img src="https://img.shields.io/badge/SQL%20Server-CC2927?logo=microsoftsqlserver&logoColor=white" alt="SQL Server">
+  <img src="https://img.shields.io/badge/Swagger-85EA2D?logo=swagger&logoColor=black" alt="Swagger">
+</p>
+
+| Category | Technologies |
 | --- | --- |
-| Framework | .NET 8, ASP.NET Core MVC, ASP.NET Core Web API |
-| Data access | Entity Framework Core, SQL Server |
-| Application patterns | CQRS, MediatR, Repository |
-| API documentation | Swagger / OpenAPI |
-| Frontend assets | Razor views and static web assets |
+| **Language & framework** | C#, .NET 8, ASP.NET Core |
+| **Web applications** | ASP.NET Core MVC, Razor Views, RESTful Web API |
+| **Data & persistence** | Entity Framework Core, SQL Server, EF Core Migrations |
+| **Application architecture** | Layered architecture, CQRS, Mediator (MediatR), Repository Pattern |
+| **API tooling** | Swagger / OpenAPI |
 
 ## 🏗️ Architecture
 
@@ -144,9 +153,3 @@ API routes use the `/api/{controller}` convention. For example:
 | `POST` | `/api/Reservations` | Create a reservation |
 
 Explore the Swagger UI while the API is running for the available controllers and endpoint details.
-
-## ⚙️ Configuration Notes
-
-- The API and MVC application have separate launch profiles; run them as separate processes during local development.
-- The MVC controllers currently use the API address `https://localhost:7294`. If the API uses another address, update the URLs used by the web controllers as well.
-- Database configuration currently lives in `CarBookContext`. Avoid committing credentials or other sensitive configuration if you adapt it for a remote database.
