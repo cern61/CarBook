@@ -1,4 +1,9 @@
-# CarBook
+<div align="center">
+
+# 🚘 CarBook
+</div>
+
+---
 
 <p align="center">
   <strong>A modern car rental platform built with ASP.NET Core</strong><br>
@@ -12,31 +17,33 @@
   <img src="https://img.shields.io/badge/Architecture-Layered-0A7EA4" alt="Layered architecture">
 </p>
 
-## Overview
+## 🧭 Overview
 
 CarBook is a full-stack car rental application composed of an ASP.NET Core MVC web interface and a separate REST API. Visitors can discover cars and rental pricing, while administrators can manage the content and data that power the platform.
 
 The codebase is organized into application, persistence, API, and frontend projects. It uses Entity Framework Core for data access and applies CQRS, Mediator, and Repository patterns in the application layer.
 
-## Certificate Program
+<img src="carbook.png" alt="CarBook" width="500">
+
+## 🎓 Certificate Program
 
 This project was developed as part of the certificate program shown below.
 
 <p align="center">
-  <img src="./certificate.jpeg" alt="Certificate for the program in which CarBook was developed" width="720">
+  <img src="./certificate.jpeg" alt="Certificate for the program in which CarBook was developed" width="500">
 </p>
 
-## Features
+## ✨ Features
 
-- **Vehicle catalog** — browse cars and view car details alongside their brands.
-- **Rental options** — explore pricing periods, locations, and vehicle availability.
-- **Reservations** — submit rental reservation requests.
-- **Editorial content** — browse blogs, authors, comments, and related content.
-- **Admin area** — manage cars, brands, features, and other site content.
-- **REST API** — HTTP endpoints for cars, brands, reservations, blogs, and more.
-- **API documentation** — Swagger UI is enabled in the Development environment.
+- 🚘 **Vehicle catalog** — browse cars and view car details alongside their brands.
+- 🗓️ **Rental options** — explore pricing periods, locations, and vehicle availability.
+- 🔑 **Reservations** — submit rental reservation requests.
+- 📝 **Editorial content** — browse blogs, authors, comments, and related content.
+- ⚙️ **Admin area** — manage cars, brands, features, and other site content.
+- 🔌 **REST API** — HTTP endpoints for cars, brands, reservations, blogs, and more.
+- 📖 **API documentation** — Swagger UI is enabled in the Development environment.
 
-## Technology
+## 🛠️ Technology
 
 | Area | Technologies |
 | --- | --- |
@@ -46,7 +53,7 @@ This project was developed as part of the certificate program shown below.
 | API documentation | Swagger / OpenAPI |
 | Frontend assets | Razor views and static web assets |
 
-## Architecture
+## 🏗️ Architecture
 
 ```mermaid
 flowchart LR
@@ -59,7 +66,7 @@ flowchart LR
     Domain -. referenced by .-> Persistence
 ```
 
-### Projects
+### 📦 Projects
 
 | Project | Responsibility |
 | --- | --- |
@@ -70,9 +77,9 @@ flowchart LR
 | `Presentation/UdemyCarBook.WebApi` | REST API controllers and Swagger configuration |
 | `UdemyCarBook.Domain` | Domain entities referenced by the application and persistence projects |
 
-## Getting Started
+## 🚀 Getting Started
 
-### Prerequisites
+### 📋 Prerequisites
 
 - .NET 8 SDK
 - SQL Server LocalDB (the default database configuration uses `(localdb)\MSSQLLocalDB`)
@@ -80,7 +87,7 @@ flowchart LR
 
 > **Domain project dependency:** The project files reference `UdemyCarBook.Domain` as a sibling directory (`..\UdemyCarBook.Domain`), but that project is not included in this repository. Make it available at that path before restoring or building the solution.
 
-### 1. Restore dependencies
+### 1️⃣ Restore dependencies
 
 Run these commands from the repository root:
 
@@ -89,7 +96,7 @@ dotnet restore Presentation\UdemyCarBook.WebApi\UdemyCarBook.WebApi.csproj
 dotnet restore Frontends\UdemyCarBook.WebUI\UdemyCarBook.WebUI.csproj
 ```
 
-### 2. Create or update the database
+### 2️⃣ Create or update the database
 
 The persistence project includes Entity Framework Core migrations. Install the EF Core CLI tool if it is not already available, then apply the migrations:
 
@@ -102,7 +109,7 @@ dotnet ef database update `
 
 The current `CarBookContext` configures a local SQL Server database named `UdemyCarBookDb`. Update the context configuration if you need to use a different SQL Server instance.
 
-### 3. Start the API
+### 3️⃣ Start the API
 
 In a terminal, run:
 
@@ -112,7 +119,7 @@ dotnet run --project Presentation\UdemyCarBook.WebApi\UdemyCarBook.WebApi.csproj
 
 The HTTPS profile listens at `https://localhost:7294` and `http://localhost:5044`. In Development, Swagger UI is available at [`https://localhost:7294/swagger`](https://localhost:7294/swagger).
 
-### 4. Start the web interface
+### 4️⃣ Start the web interface
 
 In a second terminal, run:
 
@@ -122,7 +129,7 @@ dotnet run --project Frontends\UdemyCarBook.WebUI\UdemyCarBook.WebUI.csproj --la
 
 Open [`https://localhost:7099`](https://localhost:7099). The web interface currently sends API requests to `https://localhost:7294`, so start the API with its HTTPS profile first.
 
-## API at a Glance
+## 🔌 API at a Glance
 
 API routes use the `/api/{controller}` convention. For example:
 
@@ -138,7 +145,7 @@ API routes use the `/api/{controller}` convention. For example:
 
 Explore the Swagger UI while the API is running for the available controllers and endpoint details.
 
-## Configuration Notes
+## ⚙️ Configuration Notes
 
 - The API and MVC application have separate launch profiles; run them as separate processes during local development.
 - The MVC controllers currently use the API address `https://localhost:7294`. If the API uses another address, update the URLs used by the web controllers as well.
